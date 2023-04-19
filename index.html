@@ -1,0 +1,405 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fullpage.js Stylesheet-->
+    <link rel="stylesheet" href="https://unpkg.com/fullpage.js/dist/fullpage.min.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <!-- Icons from Fontawesome -->
+    <script src="https://kit.fontawesome.com/dc39ec6c96.js" crossorigin="anonymous"></script>
+
+    <!-- DataTables Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- Fullpage.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/fullpage.js/dist/fullpage.min.js"></script>
+
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <!-- DataTables  -->
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Tippy.js -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
+    <!-- External Script -->
+    <script src="script.js"></script>
+
+    <!-- my css stylesheet -->
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <title>Document</title>
+    <style></style>
+
+</head>
+
+<body>
+
+    <!-- maximise page -->
+    <div id="fullpage">
+
+
+        <!-- 1st section index page welcome -->
+        <div class="section" style="text-align: center;">
+            <div class="container my-auto padd">
+                <img src="images/logo.png" height="400" width="400" class="contentLeft"> <br><br>
+                <h1 style="color: white; font-size: 70;" class="contentRight"><b>EXERCISE TRACKER</b></h1>
+                <form class="my-auto" action="#menu">
+                    <div class="d-flex">
+                        <ul class="list-inline mx-auto justify-content-center">
+                            <li class="nav-item px-2 py-4 contentRight">
+                                <div class="input-group rounded">
+                                    <!-- <input type="search" class="form-control rounded" placeholder="Search" /> -->
+                                    <div class="ui-widget">
+                                        <input id="name" type="text" class="form-control rounded" placeholder="Name"
+                                            required />
+                                    </div>
+                                    <!-- on click call function getdata -->
+                                    <button type="Submit" class="btn btn-primary mb-2" onclick="getData()">
+                                        <a>Welcome</a>
+                                    </button>
+                                </div>
+                                <p id="mytippy" style="color: white;">What is Exercise Tracker?</p>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <!-- 2nd section choose workout or exercise page -->
+        <div class="section">
+            <!-- NAVBAR -->
+            <!-- https://www.educba.com/bootstrap-collapse-navbar/ -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#menu">EXERCISE TRACKER<img src="images/logo.png" height="50"
+                            width="50"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarToggler"><span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarToggler">
+                        <ul class="navbar-nav my-auto">
+                            <li class="nav-item px-2 py-4"><a class="nav-link">About</a></li>
+                            <li class="nav-item px-2 py-4"><a class="nav-link">Nutrition</a></li>
+                            <li class="nav-item px-2 py-4"><a href="#welcome" class="nav-link">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- navbar items float right -->
+                    <ul class="navbar-nav my-auto float-end">
+                        <!-- https://getbootstrap.com/docs/5.0/utilities/float/ -->
+                        <li class="nav-item px-1">
+                            <!-- Display user input name form data -->
+                            <h5 style="color: white;">
+                                <div id="display"></div>
+                            </h5>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+
+
+
+            <!-- first page of slider menu -->
+            <div class="slide">
+                <div id="bannerimage">
+                    <h1 style="text-align: center; padding-top: 5%;"><b>Let's start Tracking!</b></h1>
+                    <h3 style="text-align: center; padding-bottom: 5%;">Choose your level below</h3>
+                </div>
+                <!-- CARD -->
+                <!-- https://getbootstrap.com/docs/4.0/utilities/spacing/ -->
+                <div class="container-fluid p-5">
+                    <div class="container my-auto padd">
+                        <div class="row contentUp">
+                            <div class="col-sm-4">
+                                <div class="card ">
+                                    <!-- <img src="images/cruisecard1.jpg" class="card-img-top"> -->
+                                    <div class="card-body">
+                                        <h5 class="card-title"><b>Jogging</b></h5>
+                                        <p class="card-text">a form of trotting or running at a
+                                            slow or leisurely pace.</p>
+                                        <a href="#menu/1"><button class="btn btn-primary w-50 ">Jogging</button></a>
+                                    </div>
+                                    <div class="card-footer">Check your statistics</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <!-- <img src="images/cruisecard2.jpg" class="card-img-top"> -->
+                                    <div class="card-body">
+                                        <h5 class="card-title"><b>Cycling</b></h5>
+                                        <p class="card-text">is the use of cycles for transport, recreation,
+                                            exercise or sport.</p>
+                                        <button class="btn btn-secondary w-50 " id="cyclinglock"
+                                            style="opacity: 50%;"><a href="#menu/2" id="cyclinglock">Cycling</a>
+                                        </button>
+                                    </div>
+                                    <div class="card-footer">Check your statistics</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <!-- <img src="images/cruisecard3.jpg" class="card-img-top"> -->
+                                    <div class="card-body">
+                                        <h5 class="card-title"><b>Weights</b></h5>
+                                        <p class="card-text">a sport in which athletes compete in
+                                            lifting a barbell loaded with weights.</p>
+                                        <button class="btn btn-secondary w-50 " id="weightlock" style="opacity: 50%;"><a
+                                                href="#menu/3" id="weightlock">Weight</a></button>
+                                        <!-- <i class="fa fa-lock" aria-hidden="true"></i> -->
+                                    </div>
+                                    <div class="card-footer">Check your statistics</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- page of slider runningchart -->
+                <div class="slide">
+                    <div class="container-fluid my-auto padd">
+                        <div class="row my-auto">
+                            <div class="col-4 align-top contentUp">
+                                <div class="card  w-100 h-100">
+                                    <img src="images/blog_thumbnail_run-for-the-oceans_beginner-running_1200x800.jpg"
+                                        height="200">
+                                    <div class="card-body">
+                                        <h3 class="card-title"><b>How many Kilometers have you covered while Jogging for
+                                                the week</b></h3>
+                                        <p class="card-text">a form of trotting or running at a
+                                            slow or leisurely pace, input how far you've ran throughout the week.</p>
+                                        <a id="jogtippy" class="btn btn-secondary mb-2 w-100">Why should I Jog?</a>
+                                    </div>
+                                    <div class="card-footer">Check your statistics</div>
+                                </div>
+                            </div>
+                            <div class="col-2 my-auto contentUp">
+                                <div class="row my-auto">
+                                    <form name="myForm" class="my-auto">
+                                        <input id="input1" class="form-control rounded" type="number"
+                                            placeholder="day1"><br>
+                                        <input id="input2" class="form-control rounded" type="number"
+                                            placeholder="day2"><br>
+                                        <input id="input3" class="form-control rounded" type="number"
+                                            placeholder="day3"><br>
+                                        <input id="input4" class="form-control rounded" type="number"
+                                            placeholder="day4"><br>
+                                        <input id="input5" class="form-control rounded" type="number"
+                                            placeholder="day5"><br>
+                                        <input id="input6" class="form-control rounded" type="number"
+                                            placeholder="day6"><br>
+                                        <input id="input7" class="form-control rounded" type="number"
+                                            placeholder="day7"><br>
+                                        <button type="Submit" class="btn btn-primary mb-2 w-100"
+                                            onclick="gotData1()"><a>Generate Chart</a>
+                                        </button>
+                                        <a href="#menu" class="btn btn-dark w-100">Back</a>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-6 align-top contentUp">
+                                <div class="card">
+                                    <canvas id="runningchart" width="600vh" height="400vh"></canvas>
+                                    <div class="card-footer">
+                                        <a href="#menu/2" id="level1" class="btn btn-primary mb-2 w-100">Next Level</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- page of slider cycling -->
+                <div class="slide">
+                    <div class="container-fluid my-auto padd">
+                        <div class="row my-auto">
+                            <div class="col-4 align-top contentUp">
+                                <div class="card  w-100 h-100">
+                                    <img src="images/Cube-Axial-WS-12-45369da.jpg" height="200">
+                                    <div class="card-body">
+                                        <h3 class="card-title"><b>How many Kilometers have you covered while Cycling for
+                                                the week</b></h3>
+                                        <p class="card-text">is the use of cycles for transport, recreation,
+                                            exercise or sport. People engaged in cycling are referred to as "cyclists"
+                                        </p>
+                                        <a id="cycletippy" class="btn btn-secondary mb-2 w-100">Why should I Cycle?</a>
+                                    </div>
+                                    <div class="card-footer">Check your statistics</div>
+                                </div>
+                            </div>
+                            <div class="col-2 my-auto contentUp">
+                                <div class="row my-auto">
+                                    <form name="cyclingForm" class="my-auto">
+                                        <input id="cyclinginput1" class="form-control rounded" type="number"
+                                            placeholder="day1"><br>
+                                        <input id="cyclinginput2" class="form-control rounded" type="number"
+                                            placeholder="day2"><br>
+                                        <input id="cyclinginput3" class="form-control rounded" type="number"
+                                            placeholder="day3"><br>
+                                        <input id="cyclinginput4" class="form-control rounded" type="number"
+                                            placeholder="day4"><br>
+                                        <input id="cyclinginput5" class="form-control rounded" type="number"
+                                            placeholder="day5"><br>
+                                        <input id="cyclinginput6" class="form-control rounded" type="number"
+                                            placeholder="day6"><br>
+                                        <input id="cyclinginput7" class="form-control rounded" type="number"
+                                            placeholder="day7"><br>
+                                        <button type="Submit" class="btn btn-primary mb-2 w-100"
+                                            onclick="gotData2()"><a>Generate Chart</a>
+                                        </button>
+                                        <a href="#menu" class="btn btn-dark w-100">Back</a>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-6 align-top contentUp">
+                                <div class="card">
+                                    <canvas id="cyclingchart" width="600vh" height="400vh"></canvas>
+                                    <div class="card-footer">
+                                        <a href="#menu/3" id="level2" class="btn btn-primary mb-2 w-100">Next Level</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- page of slider weightchart -->
+                <div class="slide">
+                    <div class="container-fluid my-auto padd">
+                        <div class="row my-auto">
+                            <div class="col-4 align-top contentUp">
+                                <div class="card  w-100 h-100">
+                                    <img src="images/1229823-GettyImages-1370779225-1c0cadcb4dd045daa2dad4e3040acf65.jpg"
+                                        height="200">
+                                    <div class="card-body">
+                                        <h3 class="card-title"><b>How many Hours have you covered while Lifting weights
+                                                for the week</b></h3>
+                                        <p class="card-text">is a sport in which athletes compete in
+                                            lifting a barbell loaded with weight plates</p>
+                                        <a id="weighttippy" class="btn btn-secondary mb-2 w-100">Why should I lift
+                                            Weights?</a>
+                                    </div>
+                                    <div class="card-footer">Check your statistics</div>
+                                </div>
+                            </div>
+                            <div class="col-2 my-auto contentUp">
+                                <div class="row my-auto">
+                                    <form name="weightform" class="my-auto">
+                                        <input id="weightinput1" class="form-control rounded" type="number"
+                                            placeholder="day1"><br>
+                                        <input id="weightinput2" class="form-control rounded" type="number"
+                                            placeholder="day2"><br>
+                                        <input id="weightinput3" class="form-control rounded" type="number"
+                                            placeholder="day3"><br>
+                                        <input id="weightinput4" class="form-control rounded" type="number"
+                                            placeholder="day4"><br>
+                                        <input id="weightinput5" class="form-control rounded" type="number"
+                                            placeholder="day5"><br>
+                                        <input id="weightinput6" class="form-control rounded" type="number"
+                                            placeholder="day6"><br>
+                                        <input id="weightinput7" class="form-control rounded" type="number"
+                                            placeholder="day7"><br>
+                                        <button type="Submit" class="btn btn-primary mb-2 w-100"
+                                            onclick="gotData3()"><a>Generate Chart</a>
+                                        </button>
+                                        <a href="#menu" class="btn btn-dark w-100">Back</a>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-6 align-top contentUp">
+                                <div class="card">
+                                    <canvas id="weightchart" width="600vh" height="400vh"></canvas>
+                                    <div class="card-footer"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="footer" class=" text-center text-lg-start">
+                    <!-- Copyright -->
+                    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.3);">
+                        © 2020 Copyright:
+                        <a class="text-dark" href="">Copyright.com</a>
+                    </div>
+                    <!-- Copyright -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var contentLeft = anime({
+            targets: '.contentLeft',
+            translateX: [-900, 0],
+            opacity: [0, 1],
+            delay: 500,
+        });
+
+        var contentRight = anime({
+            targets: '.contentRight',
+            easing: 'linear',
+            translateX: [900, 0],
+            opacity: [0, 1],
+            delay: 300,
+
+        });
+
+        var contentSwoop = anime({
+            targets: '.contentUp',
+            translateY: [300, 0],
+            opacity: [0, 1],
+            delay: anime.stagger(350, { start: 1000 }),
+
+        });
+
+        tippy('#mytippy', {
+            content: 'Exercise Tracker is an online app that helps users keep track of their weekly exercise regime',
+            placement: 'bottom',
+            allowHTML: true, //allow HTML in tippy content
+            followCursor: true //get tippy to follow mouse cursor
+        });
+        tippy('#jogtippy', {
+            content: 'Regularly jogging can help you lose weight, especially if you also modify your diet.',
+            placement: 'bottom',
+            allowHTML: true, //allow HTML in tippy content
+            followCursor: true //get tippy to follow mouse cursor
+        });
+        tippy('#cycletippy', {
+            content: 'You can look younger and preserve many years of your life by fighting risky diseases if you cycle, for 30-40 minutes every day.',
+            placement: 'bottom',
+            allowHTML: true, //allow HTML in tippy content
+            followCursor: true //get tippy to follow mouse cursor
+        });
+        tippy('#weighttippy', {
+            content: 'you build lean muscle tissue which is more metabolically active than fat. When you increase your muscle, you also increase metabolism throughout the day.',
+            placement: 'bottom',
+            allowHTML: true, //allow HTML in tippy content
+            followCursor: true //get tippy to follow mouse cursor
+        });
+
+    </script>
+</body>
+
+</html>
